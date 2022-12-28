@@ -1,0 +1,24 @@
+---
+const items = [
+	{ href: "/book-one", text: "Book One" },
+	{ href: "/book-two", text: "Book Two" },
+	{ href: "/buy", text: "Buy" },
+	{ href: "/about-the-authors", text: "About" },
+	{ href: "/contact", text: "Contact" },
+];
+---
+
+<nav class="w-full flex justify-between items-center">
+	<a href="/" class="p-4"
+		><strong class="font-black text-2xl uppercase">Convergence</strong>
+	</a>
+	<ol class="flex justify-between w-96">
+		{
+			items.map((item) => (
+				<li class="p-2">
+					<a href={item.href}>{item.text}</a>
+				</li>
+			))
+		}
+	</ol>
+</nav>

@@ -1,0 +1,17 @@
+---
+import coverImage from "../images/ConvergenceCover.webp";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Quote from "../components/Quote.astro";
+const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
+---
+
+<Layout title="Book Series | Convergence Books">
+	<Hero
+		image={image}
+		h1={"A Young Adult Fantasy Book Series"}
+		subtitle={"Following her mother's disappearance, sixteen-year-old Mera Kellen is sent to live with her estranged grandmother in the isolated village of Convergence, Maine."}
+		body={"Discovering that the key to saving her mother is in the secrets of the past, Mera seeks to uncover the mystery of her family&apos;s ancestry and the source of the power growing within her. This search brings Mera to a dangerous truth about who and what she really is—one that threatens to destroy everyone she loves."}
+	/>
+	<Quote />
+</Layout>

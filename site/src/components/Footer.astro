@@ -1,0 +1,63 @@
+---
+const year = new Date().getFullYear();
+const links = [
+	{
+		src: "/logos/bookshop-logo.webp",
+		alt: "Buy Incarnation at Bookshop.org",
+		href: "https://bookshop.org/a/83380/9781737733508",
+	},
+	{
+		src: "/logos/indiebound-logo.webp",
+		alt: "Buy Incarnation at Indiebound",
+		href: "https://www.indiebound.org/book/9781737733508",
+	},
+	{
+		src: "/logos/amazon-logo.webp",
+		alt: "Buy Incarnation at Amazon",
+		href: "https://www.amazon.com/Convergence-Book-One-Incarnation-Convergence/dp/1737733501/ref=sr_1_1?keywords=convergence+book+one+incarnation&qid=1657392912&sprefix=convergence+book+one+%2Caps%2C129&sr=8-1",
+	},
+	{
+		src: "/logos/goodreads-logo.webp",
+		alt: "Buy Incarnation at Goodreads",
+		href: "https://www.goodreads.com/book/show/58901829-convergence--book-one?ac=1&from_search=true&qid=NbyVP3245v&rank=1",
+	},
+	{
+		src: "/logos/instagram-logo.webp",
+		alt: "Follow us on Instagram for updates",
+		href: "https://www.instagram.com/theconvergencebooks/",
+	},
+	{
+		src: "/logos/substack-logo.webp",
+		alt: "Sign up for our newsletter on Substack",
+		href: "https://theconvergencebooks.substack.com/",
+	},
+];
+---
+
+<footer class="pt-4 pb-2 flex justify-center">
+	<div class="footer-wrapper">
+		<div class="logos flex justify-between">
+			{
+				links.map((link) => {
+					return (
+						<a
+							href={link.href}
+							class="p-2 grayscale hover:grayscale-0"
+						>
+							<img
+								src={link.src}
+								alt={link.alt}
+								class="object-contain w-5"
+							/>
+						</a>
+					);
+				})
+			}
+		</div>
+		<div class="copyright text-center text-xs">
+			<span>&copy;</span>
+			<span>{year}</span>
+			<span>Convergence books</span>
+		</div>
+	</div>
+</footer>

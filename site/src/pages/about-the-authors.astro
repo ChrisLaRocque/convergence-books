@@ -1,0 +1,35 @@
+---
+import authorImage from "../images/authors.jpg";
+import Layout from "../layouts/Layout.astro";
+import { pageBySlug } from "../../sanity";
+const pageData = await pageBySlug("about-the-authors");
+// console.log(pageData);
+// console.log("yes");
+// console.log("astro object", Astro);
+---
+
+<Layout title="About the Authors | Convergence Books">
+	<section>
+		<div class="max-w-2xl mx-auto pt-4">
+			<img
+				src={authorImage}
+				alt="Author photo of Katherine and Rebecca Lewis."
+			/>
+			<h1 class="font-bold text-xl mt-4 mb-2">About the authors</h1>
+			<p>
+				Rebecca and Katherine Lewis are sisters who were born in a small
+				town on the Connecticut coast. Rebecca attended Emerson College,
+				where she studied Creative Writing and English. Working in
+				education, she has taught and built curriculum for children from
+				the Mississippi Delta to Massachusetts to Texas. She is
+				currently studying Educational Leadership, Organizations, and
+				Entrepreneurship at Harvard University. Katherine has a BFA in
+				Film & Television Production from NYU’s Tisch School of the Arts
+				and an MFA in Writing for Screen & Television from USC’s School
+				of Cinematic Arts. Living in Los Angeles, CA, she works in
+				production management on children's content and has writing
+				credits on kid’s shows for PBS and Netflix.
+			</p>
+		</div>
+	</section>
+</Layout>
