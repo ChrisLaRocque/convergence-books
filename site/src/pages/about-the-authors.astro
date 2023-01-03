@@ -1,5 +1,4 @@
 ---
-import authorImage from "../images/authors.jpg";
 import Layout from "../layouts/Layout.astro";
 
 // import { pageBySlug } from "../../sanity";
@@ -11,11 +10,13 @@ import Layout from "../layouts/Layout.astro";
 // console.log("astro object", Astro);
 ---
 
-<Layout title="About the Authors | Convergence Books">
+<Layout title="About the Authors | Convergence Books" image={"/authors.jpg"}>
 	<section>
 		<div class="mx-auto max-w-2xl pt-4">
 			<img
-				src={authorImage}
+				src={"/authors.jpg"}
+				width="700"
+				height="467"
 				alt="Author photo of Katherine and Rebecca Lewis."
 			/>
 			<div class="text py-2 px-4">
