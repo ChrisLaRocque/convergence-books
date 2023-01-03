@@ -22,11 +22,27 @@ const {
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		<link
+			rel="stylesheet"
+			href="/webfonts/windsore-regular.css"
+			type="text/css"
+			charset="utf-8"
+		/>
 	</head>
 
 	<body class="bg-gray-900 text-gray-100">
 		<Nav />
+		<div id="spacer" class="block"></div>
 		<slot />
 		<Footer />
+		<script>
+			if (document.body.clientWidth >= 1009) {
+				const nav = document.getElementById("nav");
+				const spacer = document.getElementById("spacer");
+				if (spacer && nav) {
+					spacer.style.height = `${nav.clientHeight}px`;
+				}
+			}
+		</script>
 	</body>
 </html>

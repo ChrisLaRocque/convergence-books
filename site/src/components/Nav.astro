@@ -8,17 +8,71 @@ const items = [
 ];
 ---
 
-<nav class="w-full flex justify-between items-center">
+<nav
+	class="w-full flex justify-between items-center lg:fixed backdrop-blur z-10"
+	id="nav"
+>
 	<a href="/" class="p-4"
-		><strong class="font-black text-2xl uppercase">Convergence</strong>
+		><strong
+			class="font-heading lg:text-xl text-lg uppercase"
+			id="navWordmark">The Convergence Books</strong
+		>
 	</a>
-	<ol class="flex justify-between w-96">
+
+	<!-- Desktop nav list -->
+	<ol class="justify-between hidden lg:flex">
 		{
 			items.map((item) => (
-				<li class="p-2">
+				<li class="p-2 ">
 					<a href={item.href}>{item.text}</a>
 				</li>
 			))
 		}
 	</ol>
+	<!-- Mobile nav button -->
+	<button
+		id="hamburger"
+		class="hamburger lg:hidden w-12 flex justify-center items-center flex-col p-2"
+	>
+		<div class="h-[2px] bg-white w-full m-2"></div>
+		<div class="h-[2px] bg-white w-full mb-2"></div>
+		<div class="h-[2px] bg-white w-full mb-2"></div>
+	</button>
 </nav>
+<!-- Mobile nav list -->
+<ol
+	class="hidden absolute bg-black bg-opacity-25 backdrop-blur py-2 w-full"
+	id="navlist"
+>
+	{
+		items.map((item) => (
+			<li class="p-2 text-right">
+				<a href={item.href}>{item.text}</a>
+			</li>
+		))
+	}
+</ol>
+<style>
+	#navWordmark {
+		transition: all 1.5s ease-in-out;
+	}
+</style>
+<script>
+	if (document.body.clientWidth < 1024) {
+		let open = false;
+		const hamburger = document.getElementById("hamburger");
+		const list = document.getElementById("navlist");
+		function handleHamburger() {
+			open = !open;
+			if (list) {
+				console.log("list");
+				open
+					? (list.style.display = "block")
+					: (list.style.display = "none");
+			}
+		}
+		if (hamburger) {
+			hamburger.addEventListener("click", handleHamburger);
+		}
+	}
+</script>

@@ -1,22 +1,29 @@
----
-const { h1, subtitle, body, image } = Astro.props;
----
-
-<section class="min-h-[400px] text-white flex justify-center items-center">
-	<div class="hero-content max-w-3xl flex">
-		<div class="image-wrapper w-[40%] p-12">
-			<img src={image.src} alt={image.alt} />
-		</div>
-		<div class="text-wrapper w-[60%] flex justify-center items-center">
-			<div class="text">
-				<h1 class="text-2xl font-extrabold mb-3">
-					{h1}
-				</h1>
-				<strong class="text-sm block mb-2">{subtitle}</strong>
-				<p class="text-sm">
-					{body}
-				</p>
-			</div>
-		</div>
+<section class="flex flex-col justify-center items-center h-[60vh]" id="hero">
+	<img
+		sizes="(max-width: 1400px) 100vw, 1400px"
+		srcset="
+/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_200.png 200w,
+/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_420.png 420w,
+/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_593.png 593w,
+/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_740.png 740w,
+/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_862.png 862w,
+/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_994.png 994w,
+/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_1120.png 1120w,
+/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_1255.png 1255w,
+/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_1400.png 1400w"
+		src="/images/compass/ConvergenceCompassTextNoBG_dol6gs_c_scale,w_1400.png"
+		alt="Convergence books logo"
+		class="max-w-lg"
+		id="hero-img"
+	/>
+	<div class="hero-text">
+		<h1 class="text-xl font-heading" style="visibility: hidden;">
+			The Convergence Books
+		</h1>
 	</div>
 </section>
+<style>
+	#hero-img {
+		transition: all 1.5s ease-in-out;
+	}
+</style>

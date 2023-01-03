@@ -2,16 +2,82 @@
 import coverImage from "../images/ConvergenceCover.webp";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import Split from "../components/Split.astro";
 import Quote from "../components/Quote.astro";
+const underConstruction = false;
 const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
 ---
 
 <Layout title="Book Series | Convergence Books">
-	<Hero
-		image={image}
-		h1={"A Young Adult Fantasy Book Series"}
-		subtitle={"Following her mother's disappearance, sixteen-year-old Mera Kellen is sent to live with her estranged grandmother in the isolated village of Convergence, Maine."}
-		body={"Discovering that the key to saving her mother is in the secrets of the past, Mera seeks to uncover the mystery of her family&apos;s ancestry and the source of the power growing within her. This search brings Mera to a dangerous truth about who and what she really is—one that threatens to destroy everyone she loves."}
-	/>
-	<Quote />
+	{
+		underConstruction ? (
+			<section class="w-full h-full min-h-[75vh] flex justify-center items-center">
+				<div class="text-wrapper max-w-lg">
+					<strong class="block">Under construction</strong>
+					<p>
+						We're rebuilding theconvergencebooks.com. In the
+						meantime you can purchase book one or keep up with our
+						progress on book two at the links below.
+					</p>
+				</div>
+			</section>
+		) : (
+			<>
+				<img
+					sizes="(max-width: 1400px) 100vw, 1400px"
+					srcset="
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_200.png 200w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_413.png 413w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_536.png 536w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_622.png 622w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_624.png 624w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_973.png 973w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1007.png 1007w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1064.png 1064w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1121.png 1121w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1173.png 1173w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1178.png 1178w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1361.png 1361w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1357.png 1357w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1362.png 1362w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1400.png 1400w"
+					src="/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1400.png"
+					alt=""
+					class="-z-10 absolute top-0 w-full hidden lg:block object-cover h-[90vh]"
+				/>
+				<Hero />
+				<Split
+					image={image}
+					h1={"A Young Adult Fantasy Book Series"}
+					subtitle={
+						"Following her mother's disappearance, sixteen-year-old Mera Kellen is sent to live with her estranged grandmother in the isolated village of Convergence, Maine."
+					}
+					body={
+						"Discovering that the key to saving her mother is in the secrets of the past, Mera seeks to uncover the mystery of her family&apos;s ancestry and the source of the power growing within her. This search brings Mera to a dangerous truth about who and what she really is—one that threatens to destroy everyone she loves."
+					}
+				/>
+				<Quote />
+			</>
+		)
+	}
 </Layout>
+<script>
+	if (document.body.clientWidth >= 1009) {
+		//1009 = 1024 - 15 for scrollbar?
+		const section = document.getElementById("hero");
+		// const navWordmark = document.getElementById("navWordmark");
+		const image = document.getElementById("hero-img");
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					// navWordmark.style.opacity = +!entry.isIntersecting;
+					image.style.opacity = +entry.isIntersecting;
+				});
+			},
+			{ threshold: 0.15 }
+		);
+		if (section) {
+			observer.observe(section);
+		}
+	}
+</script>
