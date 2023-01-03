@@ -32,17 +32,8 @@ const {
 
 	<body class="bg-gray-900 text-gray-100">
 		<Nav />
-		<div id="spacer" class="block"></div>
+		<div id="spacer" class="hidden lg:block h-[60px]"></div>
 		<slot />
 		<Footer />
-		<script>
-			if (document.body.clientWidth >= 1009) {
-				const nav = document.getElementById("nav");
-				const spacer = document.getElementById("spacer");
-				if (spacer && nav) {
-					spacer.style.height = `${nav.clientHeight}px`;
-				}
-			}
-		</script>
 	</body>
 </html>
