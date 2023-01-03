@@ -25,7 +25,9 @@ const items = [
 		{
 			items.map((item) => (
 				<li class="p-2 ">
-					<a href={item.href}>{item.text}</a>
+					<a href={item.href} class="nav-link">
+						{item.text}
+					</a>
 				</li>
 			))
 		}
@@ -49,7 +51,9 @@ const items = [
 	{
 		items.map((item) => (
 			<li class="p-2 text-right">
-				<a href={item.href}>{item.text}</a>
+				<a href={item.href} class="nav-link">
+					{item.text}
+				</a>
 			</li>
 		))
 	}
