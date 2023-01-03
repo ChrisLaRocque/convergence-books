@@ -11,7 +11,7 @@ const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
 <Layout title="Book Series | Convergence Books">
 	{
 		underConstruction ? (
-			<section class="w-full h-full min-h-[75vh] flex justify-center items-center">
+			<section class="flex h-full min-h-[75vh] w-full items-center justify-center">
 				<div class="text-wrapper max-w-lg">
 					<strong class="block">Under construction</strong>
 					<p>
@@ -23,9 +23,18 @@ const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
 			</section>
 		) : (
 			<>
-				<img
-					sizes="(max-width: 1400px) 100vw, 1400px"
-					srcset="
+				<picture>
+					<source
+						type="image/webp"
+						srcset="
+/images/bg/webp/ConvergenceCompassBG_h6chij_c_scale,w_200.webp 200w,
+/images/bg/webp/ConvergenceCompassBG_h6chij_c_scale,w_1001.webp 1001w,
+/images/bg/webp/ConvergenceCompassBG_h6chij_c_scale,w_1400.webp 1400w"
+						src="/images/bg/webp/ConvergenceCompassBG_h6chij_c_scale,w_1400.webp"
+					/>
+					<source
+						type="image/png"
+						srcset="
 /images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_200.png 200w,
 /images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_413.png 413w,
 /images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_536.png 536w,
@@ -41,10 +50,30 @@ const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
 /images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1357.png 1357w,
 /images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1362.png 1362w,
 /images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1400.png 1400w"
-					src="/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1400.png"
-					alt=""
-					class="-z-10 absolute top-0 w-full hidden lg:block object-cover h-[90vh]"
-				/>
+					/>
+					<img
+						sizes="(max-width: 1400px) 100vw, 1400px"
+						srcset="
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_200.png 200w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_413.png 413w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_536.png 536w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_622.png 622w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_624.png 624w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_973.png 973w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1007.png 1007w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1064.png 1064w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1121.png 1121w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1173.png 1173w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1178.png 1178w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1361.png 1361w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1357.png 1357w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1362.png 1362w,
+/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1400.png 1400w"
+						src="/images/bg/ConvergenceCompassBG_rqn5jy_c_scale,w_1400.png"
+						alt=""
+						class="absolute top-0 -z-10 hidden h-[90vh] w-full object-cover lg:block"
+					/>
+				</picture>
 				<Hero />
 				<Split
 					image={image}
