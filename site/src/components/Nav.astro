@@ -1,26 +1,26 @@
 ---
 const items = [
-	{ href: "/book-one", text: "Book One" },
-	{ href: "/book-two", text: "Book Two" },
-	{ href: "/buy", text: "Buy" },
+	{ href: "#book-one", text: "Book One" },
+	// { href: "/book-two", text: "Book Two" },
+	{ href: "https://linktr.ee/Theconvergencebooks", text: "Buy" },
 	{ href: "/about-the-authors", text: "About" },
 	{ href: "/contact", text: "Contact" },
 ];
 ---
 
 <nav
-	class="w-full flex justify-between items-center lg:fixed backdrop-blur z-10"
+	class="z-10 flex w-full items-center justify-between backdrop-blur lg:fixed"
 	id="nav"
 >
 	<a href="/" class="p-4"
 		><strong
-			class="font-heading lg:text-xl text-lg uppercase"
+			class="font-heading text-lg uppercase lg:text-xl"
 			id="navWordmark">The Convergence Books</strong
 		>
 	</a>
 
 	<!-- Desktop nav list -->
-	<ol class="justify-between hidden lg:flex">
+	<ol class="hidden justify-between lg:flex">
 		{
 			items.map((item) => (
 				<li class="p-2 ">
@@ -32,17 +32,17 @@ const items = [
 	<!-- Mobile nav button -->
 	<button
 		id="hamburger"
-		class="hamburger lg:hidden w-12 flex justify-center items-center flex-col p-2"
+		class="hamburger flex w-12 flex-col items-center justify-center p-2 lg:hidden"
 		aria-label="Navigation menu toggle"
 	>
-		<div class="h-[2px] bg-white w-full m-2"></div>
-		<div class="h-[2px] bg-white w-full mb-2"></div>
-		<div class="h-[2px] bg-white w-full mb-2"></div>
+		<div class="m-2 h-[2px] w-full bg-white"></div>
+		<div class="mb-2 h-[2px] w-full bg-white"></div>
+		<div class="mb-2 h-[2px] w-full bg-white"></div>
 	</button>
 </nav>
 <!-- Mobile nav list -->
 <ol
-	class="hidden absolute bg-black bg-opacity-25 backdrop-blur py-2 w-full"
+	class="absolute hidden w-full bg-black bg-opacity-25 py-2 backdrop-blur"
 	id="navlist"
 >
 	{

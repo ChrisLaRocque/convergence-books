@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Split from "../components/Split.astro";
 import Quote from "../components/Quote.astro";
+import Instagram from "../components/Instagram.astro";
 const underConstruction = false;
 const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
 ---
@@ -76,8 +77,9 @@ const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
 				</picture>
 				<Hero />
 				<Split
+					id="book-one"
 					image={image}
-					h1={"A Young Adult Fantasy Book Series"}
+					h3={"Book One: Incarnation"}
 					subtitle={
 						"Following her mother's disappearance, sixteen-year-old Mera Kellen is sent to live with her estranged grandmother in the isolated village of Convergence, Maine."
 					}
@@ -86,6 +88,7 @@ const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
 					}
 				/>
 				<Quote />
+				<Instagram />
 			</>
 		)
 	}

@@ -1,20 +1,23 @@
 ---
-const { h1, subtitle, body, image } = Astro.props;
+const { h3, subtitle, body, image, id } = Astro.props;
 ---
 
-<section class="min-h-[400px] text-white flex justify-center items-center">
+<section
+	class="flex min-h-[400px] items-center justify-center text-white"
+	id={id}
+>
 	<div class="hero-content max-w-3xl lg:flex">
-		<div class="image-wrapper lg:w-[40%] lg:p-12 p-8">
+		<div class="image-wrapper p-8 lg:w-[40%] lg:p-12">
 			<img src={image.src} alt={image.alt} />
 		</div>
 		<div
-			class="text-wrapper lg:w-[60%] flex justify-center items-center lg:p-4 p-8"
+			class="text-wrapper flex items-center justify-center p-8 lg:w-[60%] lg:p-4"
 		>
 			<div class="text">
-				<h1 class="text-2xl font-extrabold mb-3">
-					{h1}
-				</h1>
-				<strong class="text-sm block mb-2">{subtitle}</strong>
+				<h3 class="font mb-3 text-2xl font-extrabold">
+					{h3}
+				</h3>
+				<strong class="mb-2 block text-sm">{subtitle}</strong>
 				<p class="text-sm">
 					{body}
 				</p>
