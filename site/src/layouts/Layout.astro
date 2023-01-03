@@ -6,6 +6,7 @@ const {
 	description = "The Convergence Books is a young adult fantasy series by Katherine E. Lewis & Rebecca Lewis. Book One: Incarnation available now!",
 	image = "/book-one-wordmark.jpeg",
 } = Astro.props;
+const { url } = Astro;
 ---
 
 <html lang="en">
@@ -31,6 +32,8 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={url} />
+		<meta property="og:url" content={url} />
 		<meta property="og:image" content={image} />
 		<meta property="og:site_name" content="Convergence Books" />
 		<meta property="og:type" content="website" />

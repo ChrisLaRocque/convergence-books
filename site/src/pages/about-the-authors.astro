@@ -1,6 +1,7 @@
 ---
 import authorImage from "../images/authors.jpg";
 import Layout from "../layouts/Layout.astro";
+
 // import { pageBySlug } from "../../sanity";
 // // const pageData = await pageBySlug("about-the-authors");
 // const { slug, heroImage } = pageData[0];
@@ -12,14 +13,14 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="About the Authors | Convergence Books">
 	<section>
-		<div class="max-w-2xl mx-auto pt-4">
+		<div class="mx-auto max-w-2xl pt-4">
 			<img
 				src={authorImage}
 				alt="Author photo of Katherine and Rebecca Lewis."
 			/>
 			<div class="text py-2 px-4">
 				<h1
-					class="font-bold text-xl mt-4 mb-3 py-2 border-b-2 border-white"
+					class="mt-4 mb-3 border-b-2 border-white py-2 text-xl font-bold"
 				>
 					About the authors
 				</h1>
