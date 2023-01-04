@@ -5,6 +5,7 @@ const {
 	title = "Convergence Books",
 	description = "The Convergence Books is a young adult fantasy series by Katherine E. Lewis & Rebecca Lewis. Book One: Incarnation available now!",
 	image = "/convergence-symbol.png",
+	noIndexNoFollow = false,
 } = Astro.props;
 const { url } = Astro;
 ---
@@ -63,6 +64,7 @@ const { url } = Astro;
 			type="text/css"
 			charset="utf-8"
 		/>
+		{noIndexNoFollow && <meta name="robots" content="noindex,nofollow" />}
 	</head>
 
 	<body class="bg-gray-900 text-gray-100">

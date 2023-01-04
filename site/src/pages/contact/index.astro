@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Contact | Convergence Books">
+	<section class="mx-auto my-4 max-w-lg p-4">
+		<h1 class="font-heading text-xl">Contact us</h1>
+		<p class="mb-4">
+			Fill out the form below to get in touch with the authors.
+		</p>
+		<form
+			name="contact"
+			action="/contact/thanks"
+			method="POST"
+			data-netlify="true"
+		>
+			<label class="mb-2 block text-sm"
+				>Name: <input
+					type="text"
+					name="name"
+					class="block w-full text-black"
+				/>
+			</label>
+
+			<label class="mb-2 block text-sm"
+				>Email: <input
+					type="email"
+					name="email"
+					class="block w-full text-black"
+				/>
+			</label>
+
+			<label class="mb-2 block text-sm"
+				>Message: <textarea
+					name="message"
+					class="block w-full text-black"></textarea>
+			</label>
+			<div class="button-wrapper flex justify-end">
+				<button type="submit" class="bg-white p-2 text-gray-900"
+					>Send</button
+				>
+			</div>
+		</form>
+	</section>
+</Layout>
