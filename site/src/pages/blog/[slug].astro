@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { allPostSlugs, postBySlug } from "../../../sanity";
+const pageData = await postBySlug(Astro?.params?.slug);
+console.log("pageData", pageData);
+const { title, html } = pageData;
+
+export async function getStaticPaths() {
+	const slugs = await allPostSlugs();
+	const asStaticPaths = slugs.map((slug) => {
+		return {
+			params: slug,
+		};
+	});
+	return asStaticPaths;
+}
+---
+
+<Layout>
+	<section>
+		<h1>{title}</h1>
+		<div set:html={html} />
+	</section>
+</Layout>

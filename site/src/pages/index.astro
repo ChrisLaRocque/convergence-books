@@ -74,7 +74,7 @@ const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
 						class="absolute top-0 -z-10 hidden h-[90vh] w-full object-cover lg:block"
 					/>
 				</picture>
-				<Hero />
+				<Hero isHomepage/>
 				<Split
 					id="book-one"
 					image={image}
@@ -96,12 +96,10 @@ const image = { src: coverImage, alt: "Convergence Book 1 Cover" };
 	if (document.body.clientWidth >= 1009) {
 		//1009 = 1024 - 15 for scrollbar?
 		const section = document.getElementById("hero");
-		// const navWordmark = document.getElementById("navWordmark");
 		const image = document.getElementById("hero-img");
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					// navWordmark.style.opacity = +!entry.isIntersecting;
 					image.style.opacity = +entry.isIntersecting;
 				});
 			},

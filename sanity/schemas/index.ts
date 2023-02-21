@@ -1,2 +1,5 @@
 import page from './page'
-export const schemaTypes = [page]
+import post from './post'
+import seo from './seo'
+import homePage from './homePage'
+export const schemaTypes = [page, post, seo, homePage]
