@@ -13,7 +13,6 @@
 	"dependencies": {
 		"@astrojs/partytown": "^1.0.3",
 		"@astrojs/tailwind": "^3.0.1",
-		"@portabletext/to-html": "^1.0.4",
 		"@sanity/client": "^3.4.1",
 		"@sanity/image-url": "^1.0.2",
 		"@types/canvas-confetti": "^1.4.3",

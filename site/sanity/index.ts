@@ -1,6 +1,6 @@
 import sanityClient from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
-import { toHTML } from "@portabletext/to-html";
+// import { toHTML } from "@portabletext/to-html";
 
 const client = sanityClient({
 	projectId: import.meta.env.SANITY_PROJECT_ID,
@@ -25,10 +25,10 @@ export async function postBySlug(slug: string) {
 		.fetch(`*[_type == 'post' && slug == '${slug}']`)
 		.then((post) => {
 			post = post[0]; // I'm so ready to be told a better way to do this
-			if (post?.content) {
-				// If portable text is present, convert to html
-				post.html = toHTML(post.content);
-			}
+			// if (post?.content) {
+			// 	// If portable text is present, convert to html
+			// 	post.html = toHTML(post.content);
+			// }
 			return post;
 		});
 }
