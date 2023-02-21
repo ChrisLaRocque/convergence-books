@@ -65,7 +65,11 @@ const {isHomepage}= Astro.props
 	#hero-img {
 		transition: all 1.5s ease-in-out;
 	}
-	#hero-img::after{
+	
+</style>
+{isHomepage && 
+<style>
+#hero::after{
 		content: '';
 		display: block;
 		position: absolute;
@@ -76,5 +80,4 @@ const {isHomepage}= Astro.props
 		height: 100%;
 		width: 100%;
 
-	}
-</style>
+	}</style>}
